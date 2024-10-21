@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   run-tests:
     docker:
-      - image: node:current
+      - image: circleci/node:latest
     steps:
       - checkout
       - restore_cache:
