@@ -40,3 +40,6 @@ $RECYCLE.BIN/
 server.crt
 certKey.txt
 server.key
+
+.sf/
+.sfdx/
