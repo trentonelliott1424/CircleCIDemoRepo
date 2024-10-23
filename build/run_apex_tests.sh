@@ -15,7 +15,7 @@
 #sfdx force:mdapi:deploy --checkonly -u DevHub -d test_code/ -w -1 -l RunLocalTests
 
 echo "Test deploying source to org"
-sf project deploy start  --source-dir force-app --target-org DevHub --dry-run --test-level RunLocalTests --results-dir test-results
+sf project deploy start  --source-dir force-app --target-org DevHub --dry-run --test-level RunLocalTests --results-dir test-results --coverage-formatters text-summary
 
 #echo "Testing code in org"
 #sfdx force:apex:test:run --testlevel RunLocalTests --outputdir test-results --resultformat tap --targetusername DevHub
