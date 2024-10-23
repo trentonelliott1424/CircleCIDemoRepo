@@ -1,5 +1,5 @@
 {
-    "serverMaxRevisionCounter": 96,
+    "serverMaxRevisionCounter": 97,
     "sourceMembers": {
         "ListView__Trailshred_Setting__mdt.All": {
             "serverRevisionCounter": 95,
@@ -530,10 +530,10 @@
             "isNameObsolete": false
         },
         "CustomField__Account.Test_Text__c": {
-            "serverRevisionCounter": 96,
-            "lastRetrievedFromServer": 96,
+            "serverRevisionCounter": 97,
+            "lastRetrievedFromServer": 97,
             "memberType": "CustomField",
-            "isNameObsolete": false
+            "isNameObsolete": true
         }
     }
 }
