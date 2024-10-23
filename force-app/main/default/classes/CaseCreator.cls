@@ -3,6 +3,9 @@ public with sharing class CaseCreator {
     Case newCase = new Case();
     newCase.Subject = 'Hi there';
     newCase.Status = 'New';
+    newCase.Description = 'really new case';
+    newCase.Comments = 'new case comments';
+    newCase.Priority = 'High';
     String acctName = [SELECT Id, Name FROM Account WHERE Name = 'Kevin' LIMIT 1]?.Name;
     System.debug('This is the account name ::: ' + acctName);
     //Inserting cases attempt 5
