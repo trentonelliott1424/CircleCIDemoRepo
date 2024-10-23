@@ -89,7 +89,11 @@ workflows:
   version: 2
   master-validate-deploy:
     jobs:
-      - run-tests
+      - run-tests:
+          filters:
+            branches:
+                only:
+                  - master   # Only on master branch
       - deploy-code:
           requires:
             - run-tests
