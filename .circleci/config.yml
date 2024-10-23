@@ -87,9 +87,22 @@ jobs:
             fi
 workflows:
   version: 2
-  validate:
+  master-validate-deploy:
     jobs:
       - run-tests
       - deploy-code:
           requires:
             - run-tests
+          branches:
+              only:
+                - master   # Only on master branch
+
+  # Workflow for branches that start with 'feature/' or 'bugfix/'
+  feature-branch-validate:
+    jobs:
+      - run-tests:
+          filters:
+            branches:
+              only:
+                - /^feature\/.*/   # Any branch starting with 'feature/'
+                - /^bugfix\/.*/    # Any branch starting with 'bugfix/'
