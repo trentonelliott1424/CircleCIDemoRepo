@@ -4,9 +4,9 @@
 
 #Create a scratch org
 echo "Creating the Scratch Org..."
-sfdx force:org:create -f config/project-scratch-def.json -a ${CIRCLE_BRANCH} -s
+sfdx force:org:create -f config/project-scratch-def.json -a "testScratch" -s
 
-sfdx force:source:push -u ${CIRCLE_BRANCH}
+sfdx force:source:push -u "testScratch"
 
 echo "Coverting source to metadata format"
 sfdx force:source:convert -d test_code -r force-app
