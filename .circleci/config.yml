@@ -59,17 +59,32 @@ jobs:
             - dependency-cache-
       - run:
           name: "Install Dependencies"
-          command: . build/install_dependencies.sh
+          command: |
+            if [ "$KEYWORD_FOUND" = "true" ]; then
+              ./build/install_dependencies.sh  
+            else
+              echo "Skipping install - keyword not found"
+            fi
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
       - run: 
           name: Login to Org
-          command: . build/login_to_sandbox.sh
+          command: |
+            if [ "$KEYWORD_FOUND" = "true" ]; then
+              ./build/login_to_sandbox.sh  
+            else
+              echo "Skipping login - keyword not found"
+            fi
       - run:
           name: Deploy to Org
-          command: . build/deploy_code.sh
+          command: |
+            if [ "$KEYWORD_FOUND" = "true" ]; then
+              ./build/deploy_code.sh  
+            else
+              echo "Skipping deploy - keyword not found"
+            fi
 workflows:
   version: 2
   validate:
