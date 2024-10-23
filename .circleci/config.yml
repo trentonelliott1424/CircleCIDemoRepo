@@ -50,6 +50,9 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
+      - run:
+          name: "Run Commit Message Check Script"
+          command: . build/check_commit_message.sh
       - restore_cache:
           keys:
             - dependency-cache-{{ checksum "package.json" }}
